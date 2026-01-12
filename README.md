@@ -6,6 +6,7 @@ Ace it or face it is a simple card guessing game where a player guesses if a ran
 - Risk vs reward balancing
 - Extensible architecture
 The project is deliberately small-scale, readable, and easy to extend to showcase solid engineering fundamentals.
+This project includes two implementations of the same core game: a CLI version and GUI version. This is explained later
 
 ## Why make this game?
 
@@ -24,9 +25,25 @@ The "ace it or face it" game deals with :
 
 These 3 points are the foundation of Casino games, Strategy games and Economic simulations. The game is intentionally designed around probability and risk, encouraging the player to balance safe, high-probability choices against low-probability, high-reward decisions.
 
+### Why are there 2 versions?
+The CLI and GUI Versions serve 2 different purposes:
+
+### `CLI Version`
+The command-line version focuses on:
+- Clean modelling of cards and decks
+- Rule enforcement and probability mechanics
+- Statistics tracking and difficulty modes
+This version demonstrates precise game logic and architecture.
+
+### `GUI Version (Tkinter)`
+The GUI version builds on the same game design but excludes the feature of the joker due to time constraints:
+- Interactive buttons for difficulty and prediction modes
+- Visual card reveal using card images
+- Dynamic probability hints
+- Game-over popups and restart flow
+This version demonstrates user interface design and event-driven programming.
 
 # Gameplay Rules
-
 ## How to Play
 1. The deck is shuffled at the start of the game. 
 
@@ -42,7 +59,6 @@ These 3 points are the foundation of Casino games, Strategy games and Economic s
 4. Correct guesses increase the player’s score:
     - Safe Mode scores 10 points
     - Risk Mode scores 30 points
-    - Joker bonus can score 5 points
 5. An incorrect guess ends the game/ loses a life.
 6. The game also ends when the deck is empty (all cards have been guessed)
 
@@ -85,16 +101,20 @@ Implements the full game loop:
 
 # How to Run
 No external dependencies are needed and the main requirement is Python 3.8+
-
+this runs the CLI version: 
 ```
 python mainGame.py
 ```
-
+this runs the GUI version: 
+```
+python GUIgame.py
+```
 
 # Further Improvements
 Here are some ways I could improve the application given more time:
 - GUI can be upgraded to a web application form such as Flask so that it is more accessible.
     - in this case extra features can be added such as a database server backend that can hold data from multiple users to create a global scoreboard of multiple users.
+- Add the joker functionality to the GUI
 - Additional game modes
 - Difficulty scaling over time
 - User profiles
