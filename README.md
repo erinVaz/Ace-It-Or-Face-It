@@ -121,5 +121,5 @@ Here are some ways I could improve the application given more time:
 - Global scoreboard
 
 # License & Credits
-Playing card art (for future GUI implementation):
+Playing card art (for GUI implementation):
 https://opengameart.org/content/playing-cards-pack
